@@ -25,32 +25,29 @@ export function Sidebar(){
            </li>
         </ul>
         </section> 
-        <section className='sidebar__middle'>Projects</section> 
-        
-   
-   
+        <section className='sidebar__middle'>
+                <span>
+                    <FaChevronDown />
+                </span>
+                <h6>Projects</h6>
+        </section> 
         <section className='sidebar__projects'>
        <ul className='project__lists'>
        <li className=''>
              <span>
-                 <FaChevronDown />
+                 <FaInbox />
              </span>
-             <h6>ProjectA</h6> 
+             <h6>Project-A</h6> 
            </li>
            <li>
              <span>
-                 <FaChevronDown />
+                 <FaInbox />
              </span>
-             <h6>ProjectA</h6> 
+             <h6>Project-B</h6> 
            </li>
        </ul>
-   
-   
-   
-        </section> 
-       
-         
-       </aside>
+    </section> 
+  </aside>
 
-    )
+    );
 }
