@@ -1,0 +1,21 @@
+// import logo from './logo.svg';
+import './App.scss';
+import { Header } from './components/Header';
+import { Sidebar } from './components/Sidebar';
+import {TodoContent} from './components/todo/TodoContent'
+
+
+function App() {
+  return (
+  <div className='container'>
+
+    <Header/>
+    
+    <Sidebar/>
+
+    <TodoContent/>
+  </div>
+  ) 
+}
+
+export default App;
