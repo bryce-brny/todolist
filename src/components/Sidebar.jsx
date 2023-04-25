@@ -5,7 +5,7 @@ export function Sidebar(){
         <aside className='sidebar'>
         <section className='sidebar__generic'>
         <ul className='generic__lists'>
-           <li className='action'>
+           <li className='active'>
              <span>
                  <FaInbox />
              </span>
@@ -33,7 +33,7 @@ export function Sidebar(){
         </section> 
         <section className='sidebar__projects'>
        <ul className='project__lists'>
-       <li className=''>
+       <li className='active'>
              <span>
                  <FaInbox />
              </span>
