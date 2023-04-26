@@ -1,12 +1,12 @@
+import { FaHome } from 'react-icons/fa';
 
-import { FaHome } from 'react-icons/fa'
-export function Header(){
-    return(
-      <header className='header'>
-        <span>
-          <FaHome/>
-        </span>
-        <h3>CC-Todolist-Bright</h3>
-      </header>
-    )
+export function Header() {
+    return (
+        <header className='header'>
+            <span>
+                <FaHome />
+            </span>
+            <h3>CC-Todoist-Pavit</h3>
+        </header>
+    );
 }

@@ -1,21 +1,38 @@
-// import logo from './logo.svg';
-import './App.scss';
+import './App.scss'; // Global
+import { useState } from 'react';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
-import {TodoContent} from './components/todo/TodoContent'
-
+import { TodoContent } from './components/todo/TodoContent';
+import mockData from './data/todos.json';
+import { getFormattedDate } from './utils/DateUtils';
 
 function App() {
-  return (
-  <div className='container'>
+    const [todos, setTodos] = useState(mockData);
 
-    <Header/>
-    
-    <Sidebar/>
+    // Filter Todo
 
-    <TodoContent/>
-  </div>
-  ) 
+    const handleFilterLists = (index) => {
+        const [nowStr, nextSevenStr] = getFormattedDate();
+        let filteredTodo = [...mockData]
+
+        // FILTER LOGIC : Schema for fillter "2023-04-29" == YYYY-MM-DD
+        if (index === 1) {
+             filteredTodo = mockData.filter((todoObj) => todoObj.due_date === nowStr);
+        } else if (index === 2) {
+             filteredTodo = mockData.filter(
+                (todoObj) => todoObj.due_date >= nowStr && todoObj.due_date <= nextSevenStr
+            );
+        }
+        setTodos(filteredTodo);
+    };
+
+    return (
+        <div className='container'>
+            <Header />
+            <Sidebar onSelectTab={handleFilterLists} />
+            <TodoContent todos={todos} setTodos={setTodos} />
+        </div>
+    );
 }
 
 export default App;
